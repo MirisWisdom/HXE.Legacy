@@ -112,7 +112,7 @@ namespace HXE.HCE
         const string member = "EXE Path";
         using (var key = Registry.LocalMachine.OpenSubKey(subKey))
         {
-          var path = key?.GetValue(member).ToString();
+          var path = Combine(key?.GetValue(member).ToString(), Executable);
 
           if (path != null && Exists(path))
             return new FileInfo(path);

@@ -57,7 +57,7 @@ namespace HXE.HCE
     {
       var hce = Detection.Infer();
 
-      if (System.IO.File.Exists(hce.FullName))
+      if (hce != null)
         return (Executable) hce.FullName;
 
       throw new FileNotFoundException("Could not detect executable on the filesystem.");
